@@ -109,7 +109,7 @@ ax.set_ylabel(r'$|\psi_0(x)|^2$')
 
         for i in range(num_steps):
             psi = fft(psi)
-            psi = np.exp(-1j*dt*self.k)*psi
+            psi = np.exp(-1j*dt*self.k**2/2)*psi
             psi_k[i+1] = psi
             psi = ifft(psi)
             psi = np.exp(-1j*dt*(self.V_NL(psi, g) + self.V))*psi
@@ -139,13 +139,13 @@ ax.set_ylabel(r'$|\psi_0(x)|^2$')
         self.psi_x = dic['psi_x']
         self.psi_k = dic['psi_k']
 
-        plt.imshow(prob_densities, cmap=plt.get_cmap("BuPu"), origin='lower', 
+        plt.imshow(self.prob_densities, cmap=plt.get_cmap("BuPu"), origin='lower', 
                    extent=[self.x[0]/2, self.x[-1]/2-self.dX, dt/2, (num_steps+1/2)*dt], aspect='auto')
         plt.xlabel('$x$ $[\\xi]$')
         plt.ylabel('$t$ $[\\xi/c_s]$')
         cbar = plt.colorbar()
         cbar.set_label(r'$|\psi_0(x)|^2$', labelpad=20)
-        plt.savefig(file_name, dpi=300, bbox_inches='tight')
+        #plt.savefig(file_name, dpi=300, bbox_inches='tight')
         plt.show()
 
 #----------------------------------------- 2D -----------------------------------------#
