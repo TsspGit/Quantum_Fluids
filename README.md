@@ -11,12 +11,14 @@ Up to now, the codes are developed for 1D-GPE and 2D-GPE you can check the jupyt
 3. [Superfluid Hidrodynamical equations](https://github.com/TsspGit/Quantum_Fluids/blob/master/Madelung_Representation.pdf)
 
 ## Simulations
+### Gaussian Packet in a harmonic potential 2D
 ![Gaussian Packet in a harmonic potential 2D](https://github.com/TsspGit/Quantum_Fluids/blob/master/SSFourier_Method/Figures/Gaussian2D/GPE_HO2D.gif)
 
+### Two dark solitons under the presence of white noise creating vortex-antivortex pairs
 ![Soliton with noise (2D)](https://github.com/TsspGit/Quantum_Fluids/blob/master/SSFourier_Method/Figures/Soliton2D/GPE_soliton2D_v2.gif)
+Inspired in []
 
 ## Contact
-
 Please, do not hesitate to contact me! Any suggestion or bugs report is welcome! Science is about community, not individuals!
 
 Personal email: [tssanchezpastor@gmail.com](tssanchezpastor@gmail.com)
