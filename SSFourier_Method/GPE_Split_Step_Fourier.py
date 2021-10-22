@@ -100,8 +100,8 @@ ax.set_ylabel(r'$|\psi_0(x)|^2$')
         columns in temporal order.
         """
         prob_densities = np.zeros((num_steps+1, self.N))
-        psi_k          = np.zeros((num_steps+1, self.N))
-        psi_x          = np.zeros((num_steps+1, self.N))
+        psi_k          = np.zeros((num_steps+1, self.N), dtype=complex)
+        psi_x          = np.zeros((num_steps+1, self.N), dtype=complex)
         psi            = self.psi0
         psi_x[0]       = psi
         psi_k[0]       = fft(psi)
@@ -140,7 +140,7 @@ ax.set_ylabel(r'$|\psi_0(x)|^2$')
         self.psi_k = dic['psi_k']
 
         plt.imshow(self.prob_densities, cmap=plt.get_cmap("BuPu"), origin='lower', 
-                   extent=[self.x[0]/2, self.x[-1]/2-self.dX, dt/2, (num_steps+1/2)*dt], aspect='auto')
+                   extent=[self.x[0], self.x[-1]-self.dX, dt/2, (num_steps+1/2)*dt], aspect='auto')
         plt.xlabel('$x$ $[\\xi]$')
         plt.ylabel('$t$ $[\\xi/c_s]$')
         cbar = plt.colorbar()
