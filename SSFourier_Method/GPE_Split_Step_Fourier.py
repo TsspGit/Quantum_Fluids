@@ -122,7 +122,7 @@ ax.set_ylabel(r'$|\psi_0(x)|^2$')
 
         return out
         
-    def run_and_plot(self, num_steps, dt, g):
+    def run_and_plot(self, num_steps, dt, g, file_name):
         """
         Runs the model given an initial state and plots the temporal
         development of the probability density.
@@ -145,7 +145,7 @@ ax.set_ylabel(r'$|\psi_0(x)|^2$')
         plt.ylabel('$t$ $[\\xi/c_s]$')
         cbar = plt.colorbar()
         cbar.set_label(r'$|\psi_0(x)|^2$', labelpad=20)
-        #plt.savefig(file_name, dpi=300, bbox_inches='tight')
+        plt.savefig(file_name, dpi=300, bbox_inches='tight')
         plt.show()
 
 #----------------------------------------- 2D -----------------------------------------#
